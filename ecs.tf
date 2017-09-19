@@ -12,6 +12,7 @@ resource "aws_launch_configuration" "ecs-example-launchconfig" {
   user_data            = "#!/bin/bash\necho 'ECS_CLUSTER=example-cluster' > /etc/ecs/ecs.config\nstart ecs"
   lifecycle              { create_before_destroy = true }
 }
+
 resource "aws_autoscaling_group" "ecs-example-autoscaling" {
   name                 = "ecs-example-autoscaling"
   vpc_zone_identifier  = ["${aws_subnet.main-public-1.id}", "${aws_subnet.main-public-2.id}"]
@@ -26,4 +27,3 @@ resource "aws_autoscaling_group" "ecs-example-autoscaling" {
   }
 }
 #wait_for_elb_capacity = 1
-
