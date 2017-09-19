@@ -17,7 +17,7 @@ resource "aws_instance" "jenkins-instance" {
 }
 
 resource "aws_ebs_volume" "jenkins-data" {
-    availability_zone = "us-east-1a"
+    availability_zone = "us-west-2a"
     size = 16
     type = "gp2" 
     tags {
