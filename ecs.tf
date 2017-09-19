@@ -18,12 +18,12 @@ resource "aws_autoscaling_group" "ecs-example-autoscaling" {
   launch_configuration = "${aws_launch_configuration.ecs-example-launchconfig.name}"
   min_size             = 1
   max_size             = 1
-  wait_for_elb_capacity = 1
+  
   tag {
       key = "Name"
       value = "ecs-ec2-container"
       propagate_at_launch = true
   }
 }
-
+#wait_for_elb_capacity = 1
 
