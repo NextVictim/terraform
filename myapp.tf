@@ -33,7 +33,6 @@ resource "aws_ecs_service" "myapp-service" {
 # load balancer
 resource "aws_elb" "myapp-elb" {
   name = "myapp-elb"
-
   listener {
     instance_port = 3000
     instance_protocol = "http"
