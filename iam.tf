@@ -86,7 +86,10 @@ EOF
 }
 
 # ecs service role
-
+resource "aws_iam_role" "ecs-service-role" {
+    name = "ecs-service-role"
+    assume_role_policy = <<EOF
+}
 
 resource "aws_iam_policy_attachment" "ecs-service-attach1" {
     name = "ecs-service-attach1"

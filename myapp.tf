@@ -31,5 +31,13 @@ resource "aws_ecs_service" "myapp-service" {
 }
 
 # load balancer
+resource "aws_elb" "myapp-elb" {
+  name = "myapp-elb"
+  
+  tags {
+    Name = "myapp-elb"
+  }
+}
+
 
 
