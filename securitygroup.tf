@@ -22,25 +22,18 @@ resource "aws_security_group" "ecs-securitygroup" {
       cidr_blocks = ["0.0.0.0/0"]
   } 
   tags {
-    Name = "ecs-securitygrouptf"
+    Name = "ecs"
   }
 }
 resource "aws_security_group" "myapp-elb-securitygroup" {
   vpc_id = "${aws_vpc.main.id}"
   name = "myapp-elb"
-  description = "security group for ecs 2"
+  description = "security group for ecs"
   egress {
       from_port = 0
       to_port = 0
       protocol = "-1"
       cidr_blocks = ["0.0.0.0/0"]
-  }
-  
-  ingress {
-      from_port = 3000
-      to_port = 3000
-      protocol = "tcp"
-      security_groups = ["${aws_security_group.myapp-elb-securitygroup.id}"]
   }
 
   ingress {
@@ -50,7 +43,7 @@ resource "aws_security_group" "myapp-elb-securitygroup" {
       cidr_blocks = ["0.0.0.0/0"]
   } 
   tags {
-    Name = "myapp-elb-securitygrouptf"
+    Name = "myapp-elb"
   }
 }
 # jenkins
@@ -78,6 +71,6 @@ resource "aws_security_group" "jenkins-securitygroup" {
       cidr_blocks = ["0.0.0.0/0"]
   } 
 tags {
-    Name = "jenkins-securitygrouptf"
+    Name = "jenkins-securitygroup"
   }
 }

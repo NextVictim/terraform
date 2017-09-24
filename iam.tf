@@ -105,7 +105,6 @@ resource "aws_iam_role" "ecs-service-role" {
 EOF
 }
 
-
 resource "aws_iam_policy_attachment" "ecs-service-attach1" {
     name = "ecs-service-attach1"
     roles = ["${aws_iam_role.ecs-service-role.name}"]
