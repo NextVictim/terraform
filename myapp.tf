@@ -57,7 +57,7 @@ resource "aws_elb" "myapp-elb" {
   security_groups = ["${aws_security_group.myapp-elb-securitygroup.id}"]
 
   tags {
-    Name = "myapp-elb"
+    Name = "myapp-elb-myapptf"
   }
 }
 

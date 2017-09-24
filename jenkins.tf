@@ -21,7 +21,7 @@ resource "aws_ebs_volume" "jenkins-data" {
     size = 16
     type = "gp2" 
     tags {
-        Name = "jenkins-data"
+        Name = "jenkins-data-jenkinstf"
     }
 }
 

@@ -6,7 +6,7 @@ resource "aws_vpc" "main" {
     enable_dns_hostnames = "true"
     enable_classiclink = "false"
     tags {
-        Name = "main"
+        Name = "main-vpctf"
     }
 }
 
@@ -19,7 +19,7 @@ resource "aws_subnet" "main-public-1" {
     availability_zone = "us-west-2a"
 
     tags {
-        Name = "main-public-1"
+        Name = "main-public-1-vpctf"
     }
 }
 resource "aws_subnet" "main-public-2" {
@@ -29,7 +29,7 @@ resource "aws_subnet" "main-public-2" {
     availability_zone = "us-west-2b"
 
     tags {
-        Name = "main-public-2"
+        Name = "main-public-2-vpctf"
     }
 }
 resource "aws_subnet" "main-public-3" {
@@ -39,7 +39,7 @@ resource "aws_subnet" "main-public-3" {
     availability_zone = "us-west-2c"
 
     tags {
-        Name = "main-public-3"
+        Name = "main-public-3-vpctf"
     }
 }
 resource "aws_subnet" "main-private-1" {
@@ -49,7 +49,7 @@ resource "aws_subnet" "main-private-1" {
     availability_zone = "us-west-2a"
 
     tags {
-        Name = "main-private-1"
+        Name = "main-private-1-vpctf"
     }
 }
 resource "aws_subnet" "main-private-2" {
@@ -59,7 +59,7 @@ resource "aws_subnet" "main-private-2" {
     availability_zone = "us-west-2b"
 
     tags {
-        Name = "main-private-2"
+        Name = "main-private-2-vpctf"
     }
 }
 resource "aws_subnet" "main-private-3" {
@@ -69,7 +69,7 @@ resource "aws_subnet" "main-private-3" {
     availability_zone = "us-west-2c"
 
     tags {
-        Name = "main-private-3"
+        Name = "main-private-3-vpctf"
     }
 }
 
@@ -78,7 +78,7 @@ resource "aws_internet_gateway" "main-gw" {
     vpc_id = "${aws_vpc.main.id}"
 
     tags {
-        Name = "main"
+        Name = "main-vpctf-2"
     }
 }
 
@@ -91,7 +91,7 @@ resource "aws_route_table" "main-public" {
     }
 
     tags {
-        Name = "main-public-1"
+        Name = "main-public-1-vpctf"
     }
 }
 
